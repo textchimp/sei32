@@ -1,0 +1,52 @@
+
+body {
+  background-color: hotpink;
+  font-family: Arial, sans-serif;
+}
+
+img {
+  border: 1px solid white;
+}
+
+/* Nesting! A space means "...which has a child somewhere in its descendants..." */
+div a {
+  background-color: orange;
+}
+/* Use a > between the tag names to indicate "direct discendant", i.e. child and not grandchild */
+
+/* This selector only applies to images which the user is currently hovering over */
+img:hover {
+  border: 4px solid red;
+  border-radius: 10px;
+}
+/*
+* {
+  border: 1px solid yellow;
+} */
+
+a:visited{
+  color: grey;
+}
+
+h1, h3, .specialColour {
+  color: green;
+}
+
+#dogList {
+  border: 1px solid orange;
+}
+
+#content {
+  width: 70%;
+  /* Percentage means relative to the parent element! */
+  margin: auto;
+}
+
+/* Just apply this rule to any <p> tag which has a class="specialColour" attribute */
+p.specialColour {
+  background-color: lavender;
+}
+
+ul {
+  /* list-style: none; */
+}
