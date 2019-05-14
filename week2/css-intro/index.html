@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Layout</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav id="topNav">
+    <div class="leftNav">
+      <ul>
+         <li>Home</li>
+         <li>About</li>
+         <li>Shop</li>
+      </ul>
+    </div><div class="rightNav">Right login menu</div>
+  </nav>
+
+  <h1>CSS Layout</h1>
+
+  <p>Let's do this!</p>
+
+  <!--
+    <img> tags are display: inline by default!
+    So are <span> tags, <code> tags, and many others
+  -->
+  <img src="http://fillmurray.com/400/300">
+  <img src="http://placebear.com/400/300">
+  <img src="http://placekitten.com/400/300">
+
+
+
+  <h3><code>position:</code> property examples</h3>
+
+  <div class="box staticExample">Static (default)</div>
+
+  <div class="box relativeExample">Relative</div>
+
+  <div class="box parentOfAbsolute">Parent of absoluteExample
+
+    <div class="box absoluteExample">Absolute</div>
+
+  </div><!-- parentOfAbsolute -->
+
+  <div class="box fixedExample">Fixed</div>
+
+
+
+
+
+  <h3><code>display:</code> property examples</h3>
+
+  <br>
+  <br> <!-- Don't actually do this (adding lots of break tags to get vertical space; use CSS margin/padding) -->
+
+  <div class="inlineExample">This element is <code>display: inline;</code></div>
+
+  <!-- whitespace will be ignored! (or compressed into a single ' ') -->
+
+  <div class="inlineExample">This element is also inline, so it sits next to its neighbouring inline element.</div>
+
+  <br><br>
+
+  <div class="blockExample">This is a <code>display: block;</code> element.</div><div class="blockExample">This is another block element. Each of these will get an entire row to themselves.</div>
+
+  <br><br>
+
+  <div class="inlineBlockExample">This is a <code>display: inline-block;</code> element.</div>
+  <div class="inlineBlockExample">This is another inline-block element. They will sit next to each other on the same row, and you can also change their width/height.</div>
+
+</body>
+</html>

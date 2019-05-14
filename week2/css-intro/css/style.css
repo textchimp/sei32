@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+body {
+  background-color: lavender;
+  /* font-family: Lato, sans-serif; */
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0;
+}
+
+img {
+  transition: 1s;
+}
+
+img:hover {
+  transform: rotate(360deg) scale(3);
+  filter: hue-rotate(360deg);
+}
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-boz-sizing: border-box;
+  box-sizing: border-box;
+  /*
+  The "border-box" model causes the browser to include the sizes of borders and padding as part of the size of the element, so when you use declarations like "width: 80%" and "width: 20%" those borders/padding will be including in that percentage, instead of being added on afterwards.
+  */
+}
+
+#topNav {
+  /* border: 1px solid red; */
+  background-color: black;
+  color: white;
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+#topNav div {
+  display: inline-block;
+  padding: 16px;
+  /* border: 1px solid green; */
+}
+
+.leftNav {
+  width: 80%;
+}
+
+.rightNav {
+  width: 20%;
+  text-align: right;
+}
+
+#topNav ul {
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+#topNav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+h1 {
+  margin-top: 60px;
+  /*  Otherwise the top of our content is hidden behind the fixed nav bar */
+}
+
+.inlineExample {
+  display: inline;
+  width: 300px; /* This will have no effect for inline elements */
+}
+
+.blockExample {
+  display: block;
+  width: 300px; /* This will actually work */
+}
+
+.inlineBlockExample {
+  display: inline-block;
+  width: 200px; /* This will work */
+  height: 300px;
+  border: 1px solid brown;
+  vertical-align: top; /* Without this the browser will display these DIVs offset weirdly from each other. */
+}
+
+.box {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  vertical-align: top;
+  border: 1px solid black;
+}
+
+.staticExample {
+  position: static;
+  top: 100px; /* This offset from the top has no effect */
+}
+
+.relativeExample {
+  position: relative;
+  top: 50px;
+  left: 50px;
+  /* These offsets will move the element relative to where it would have started in its static position (its default position in the flow) */
+}
+
+.parentOfAbsolute {
+  position: relative;
+}
+
+.absoluteExample {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+.fixedExample {
+  position: fixed;
+  top: 200px;
+  right: 0;
+}
+
+
+/* This selector would affect ONLY elements which had BOTH the .box AND the .staticExample classes */
+.box.staticExample {
+
+}
+
+/* This selector would affect ONLY elements with a class of "staticExample" who had an ancestor element (parent, grandparent etc) with a "box" class... i.e the space indicates nesting of any depth */
+.box .staticExample {
+
+}
+
+/* This selector would affect any elements with any one of the classes mentioned in the comma-separated list (the element does NOT have to have all of the selectors match, any can match) */
+.box, .staticExample {
+
+}
