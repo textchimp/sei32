@@ -1,0 +1,14 @@
+
+<h2>Search Results:</h2>
+
+<ul>
+<% @results.each do |movie| %>
+
+ <li>
+  <strong><%= movie['title'] %></strong>
+  <p><%= movie['overview'] %></p>
+  <img src="http://image.tmdb.org/t/p/w185<%= movie['poster_path'] %>" alt="">
+ </li>
+
+<% end %>
+</ul>
