@@ -1,0 +1,10 @@
+
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: rgb(3, 17, 59);
+  color: rgb(205, 205, 205);
+}
+
+img {
+  max-width: 400px;
+}
