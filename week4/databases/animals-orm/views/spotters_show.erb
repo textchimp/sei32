@@ -1,0 +1,16 @@
+
+<h2>
+  <%= @spotter['name'] %>
+</h2>
+
+<a href="/spotters/<%= @spotter['id'] %>/edit">Edit This Spotter</a> |
+<a href="/spotters/<%= @spotter['id'] %>/delete">Delete This Spotter</a>
+
+<p>Location: <%= @spotter.location %></p>
+
+<p>
+  Animal spotting:
+  <a href="/animals/<%= @spotter.animal.id %>">
+    <%= @spotter.animal.first_name %> <%= @spotter.animal.last_name %>
+  </a>
+</p>

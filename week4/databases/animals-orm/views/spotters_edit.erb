@@ -1,0 +1,14 @@
+<h2>Edit Spotter <%= @spotter.name %> </h2>
+
+<!--
+  Using value="SOMETHING" in these form text input tags is what causes them to already be filled
+  with data when the page loads; here, we set the value to be whatever was already in the
+  database for this column, using ERB tags for interpolating that column value from @spotter
+-->
+<form action="/spotters/<%= @spotter.id %>" method="post">
+  Name: <input type="text" name="name" value="<%= @spotter.name %>"><br>
+  Location: <input type="text" name="location" value="<%= @spotter.location %>"><br>
+  Animal ID: <input type="text" name="animal_id" value="<%= @spotter.animal_id %>"><br>
+  <br>
+  <input type="submit" value="Update Spotter">
+</form>
