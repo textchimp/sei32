@@ -1,0 +1,12 @@
+
+<h2>Results for "<%= params[:query] %>":</h2>
+
+<ul>
+<% @results.each do |movie| %>
+
+<li>
+  <%= movie['title'] %>
+</li>
+
+<% end %>
+</ul>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsStocksMovies</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <h1>Stocks &amp; Movies</h1>
+    <hr>
+    <%= yield %>
+    <hr>
+    <p>&copy; Incoherent Website Concepts 2019</p>
+  </body>
+</html>

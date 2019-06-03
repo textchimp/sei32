@@ -1,0 +1,29 @@
+
+<h2>Let's Calculate!</h2>
+
+<p>
+  Enter a URL of the form
+  <code>/calc/NUM1/OPERATION/NUM2</code>
+  to use the calculator.
+</p>
+
+<p>or...</p>
+
+<form action="/calc/submit">
+  <label>
+    First: <input type="text" name="first">
+    <!--
+    ends up in /calc/submit?first=xx&op=*&second=yy
+    and then in params[:first], params[:op], params[:second]
+    -->
+  </label>
+  <label>
+    Operation: <input type="text" name="op">
+  </label>
+  <label>
+    Second: <input type="text" name="second">
+  </label>
+
+  <input type="submit" value="Calculate!">
+
+</form>
