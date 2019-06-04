@@ -1,0 +1,31 @@
+
+<h2>Add Planet</h2>
+
+<!-- submits with a POST to "/planets" -->
+<form action="<%= planets_path %>" method="post">
+
+  <label>
+    Name: <input type="text" name="name">
+  </label><br>
+  <label>
+    Image URL: <input type="text" name="image">
+  </label><br>
+  <label>
+    Orbit: <input type="text" name="orbit">
+  </label><br>
+  <label>
+    diameter: <input type="text" name="diameter">
+  </label><br>
+  <label>
+    Mass: <input type="text" name="mass">
+  </label><br>
+  <label>
+    Temperature: <input type="text" name="temperature">
+  </label><br>
+  <label>
+    Moons: <input type="text" name="moons">
+  </label><br>
+
+  <input type="submit" value="Add">
+
+</form>

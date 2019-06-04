@@ -1,0 +1,10 @@
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Helvetica, sans-serif;
+}
+
+img.planet-show {
+  max-width: 400px;
+}
