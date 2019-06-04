@@ -5,7 +5,9 @@
 <% @results.each do |movie| %>
 
 <li>
-  <%= movie['title'] %>
+  <a href="/movies/<%= movie['id'] %>">
+    <%= movie['title'] %>
+  </a>
 </li>
 
 <% end %>
