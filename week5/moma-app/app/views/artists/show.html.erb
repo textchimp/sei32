@@ -1,0 +1,26 @@
+
+<h2><%= @artist.name %></h2>
+
+<!-- <a href="<%= artist_edit_path(@artist.id) %>">Edit this Artist</a> -->
+<%= link_to 'Edit this Artist', artist_edit_path(@artist.id) %>
+|
+<!-- <a href="<%= artist_delete_path(@artist.id) %>">Delete this Artist</a> -->
+<%= link_to 'Delete this artist', artist_delete_path(@artist.id), method: 'delete' %>
+
+
+<p><strong>Nationality</strong>: <%= @artist.nationality %></p>
+<p><strong>Date of Birth</strong>: <%= @artist.dob %></p>
+<p><strong>Period</strong>: <%= @artist.period %></p>
+<p><strong>Roundness</strong>: <%= @artist.roundness %></p>
+<p><strong>Biography</strong>: <%= @artist.bio %></p>
+
+<strong>Works:</strong><br>
+<ul>
+  <% @artist.works.each do |work| %>
+    <li>
+      <%= link_to work.title, work_path(work.id) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= image_tag @artist.image, alt: @artist.name, class: 'artist-portrait' %>

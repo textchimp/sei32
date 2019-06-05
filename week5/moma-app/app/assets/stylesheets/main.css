@@ -1,0 +1,26 @@
+
+body {
+  background-color: rgb(65, 74, 99);
+  color: rgb(226, 226, 226);
+  font-family: Garamond, serif;
+}
+
+a {
+  color: rgb(208, 123, 22);
+}
+
+img.home {
+  max-height: 400px;
+}
+
+img.artist-portrait {
+  max-height: 300px;
+}
+
+img.work-main {
+  max-height: 400px;
+}
+
+fieldset {
+  border: 0;
+}

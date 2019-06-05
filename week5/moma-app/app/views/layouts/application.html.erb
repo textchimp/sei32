@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MomaApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <h1>MoMA Artists</h1>
+
+    <nav>
+      <%= link_to 'Index of Artists', artists_path %>
+      |
+      <%= link_to 'Add New Artist', artists_new_path %>
+      |
+      <%= link_to 'Index of Works', works_path %>
+      |
+      <%= link_to 'Add New Works', new_work_path %>
+    </nav>
+
+    <hr>
+
+    <%= yield %>
+
+    <hr>
+    <footer>
+      &copy; Art School Dropout Productions, 2019
+    </footer>
+
+  </body>
+</html>

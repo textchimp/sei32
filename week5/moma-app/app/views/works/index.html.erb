@@ -1,0 +1,12 @@
+
+<h2>All Works</h2>
+
+<ul>
+  <% @works.each do |work| %>
+    <li>
+      <em><%= link_to work.title, work_path(work.id)  %></em>,
+      (by <%= link_to work.artist.name, artist_path(work.artist.id)  %>,
+      <%= work.year.year %>)
+    </li>
+  <% end %>
+</ul>
