@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TunrDbSei32</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <h1>Tunr: gamify your digital stream tunez</h1>
+    <nav>
+      <% if @current_user.present? %>
+         Welcome, <%= @current_user.name %>
+         |
+         <%= link_to 'Logout', login_path, method: 'delete' %>
+      <% else %>
+         <%= link_to 'Login', login_path %>
+      <% end %>
+    </nav>
+    <hr>
+    <%= yield %>
+    <hr>
+    &copy; Music Industry Stooge Productions 2019
+  </body>
+</html>
