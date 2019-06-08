@@ -10,6 +10,8 @@ Artist.destroy_all
 
 puts "Creating artists..."
 
+# NOTE TO SELF: Use 'Artist.create!' to throw loud errors if the create fails...
+
 a1 = Artist.create name: 'Lee Krasner', nationality: 'USA', dob: '1908/10/27', period: '20th Century', image: 'https://i.pinimg.com/736x/05/62/14/0562148ce05f206e7ad773dc65d565bc--lee-krasner-abstract-expressionism.jpg', roundness: 4, bio: 'Abstract expressionist'
 
 a2 = Artist.create name: 'Frantisek Kupka', nationality: 'Czech', dob: '1871/09/23', period: '20th Century', image: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Frantisek_Kupka_1928.jpg', roundness: 7, bio: 'Vorticist/Abstract'
