@@ -1,5 +1,5 @@
 
- <%= form_for @work do |f| %>
+ <%= form_for @work, html: {multipart: true} do |f| %>
 
    <fieldset>
      <%= f.label :title %>
@@ -23,7 +23,9 @@
 
    <fieldset>
      <%= f.label :image, 'Image URL' %>
-     <%= f.text_field :image %>
+     <%# f.text_field :image %>
+     <%= f.cl_image_upload :image %>
+​
    </fieldset>
 
 

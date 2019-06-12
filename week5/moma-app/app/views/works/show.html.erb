@@ -17,4 +17,4 @@
   <%= link_to 'Delete this Work', work_path(@work.id), method: 'delete' %>
 </p>
 
-<%= image_tag @work.image, alt: @work.title, class: 'work-main' %>
+<%= cl_image_tag @work.image, alt: @work.title, class: 'work-main' %>

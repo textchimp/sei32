@@ -52,3 +52,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pry-rails'
+
+# Added at 2019-06-11 15:02:46 +1000 by textchimp:
+gem "cloudinary", "~> 1.11"

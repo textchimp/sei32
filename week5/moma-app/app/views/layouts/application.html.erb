@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= cloudinary_js_config %>
+
   </head>
 
   <body>
@@ -19,7 +21,7 @@
       |
       <%= link_to 'Index of Works', works_path %>
       |
-      <%= link_to 'Add New Works', new_work_path %>
+      <%= link_to 'Add New Work', new_work_path %>
     </nav>
 
     <hr>
