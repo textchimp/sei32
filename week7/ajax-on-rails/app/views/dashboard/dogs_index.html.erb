@@ -1,0 +1,8 @@
+
+<h1>All Dogs</h1>
+
+<ul>
+<% @dogs.each do |dog| %>
+  <li><%= dog.name %> (<%= dog.roundness %>)</li>
+<% end %>
+</ul>
