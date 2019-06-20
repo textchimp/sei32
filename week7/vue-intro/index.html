@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.js Intro</title>
+  <style>
+    .error {
+      border: 2px solid red;
+    }
+    .noErrors {
+      border: 1px solid green;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Vue</h1>
+  <hr>
+
+  <div id="app">
+
+   <button @click="reverseMessage">
+     Reverse the message!
+   </button>
+
+    <p>{{ message }}</p>
+
+    <span :title="loadTime">
+      Hover your mouse over me!
+    </span>
+
+    <br>
+    <br>
+
+    <div v-if="canSee" v-bind:class="status">
+      Can you see me?
+    </div>
+
+    <p>Todo List (for loop in HTML!)</p>
+    <ol>
+      <li v-for="todo in todoList">
+        <dogs-form roundness="5" :title="todo.text" :message="message">
+        </dogs-form>
+      </li>
+    </ol>
+
+    <p>Two-way Binding:</p>
+    <input v-model="message" type="text">
+
+
+    <p>Custom components:</p>
+
+    <dogs-form roundness="5" title="Dog A"></dogs-form>
+
+    <dogs-form roundness="9" title="Dog B"></dogs-form>
+
+
+    <h4>All Rails Dogs</h4>
+
+    <ul>
+      <li v-for="dog in dogs">
+        <strong>{{ dog.name }}</strong> ({{ dog.age }})
+      </li>
+    </ul>
+
+
+  </div><!-- #app -->
+
+  <script src="js/vue.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

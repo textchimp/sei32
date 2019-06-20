@@ -1,0 +1,11 @@
+
+body {
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+#results > img {
+  padding: 3px;
+  vertical-align: top;
+}

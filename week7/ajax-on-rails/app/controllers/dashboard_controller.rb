@@ -38,6 +38,11 @@ class DashboardController < ApplicationController
 
 
   def dogs_index
+
+    # Avoid CORS errors in the browser when we load this page via AJAX, from
+    # a different origin
+    headers['Access-Control-Allow-Origin'] = '*'
+    
     @dogs = Dog.all
 
     respond_to do |format|
