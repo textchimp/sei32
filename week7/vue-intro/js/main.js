@@ -1,9 +1,9 @@
 
 
 Vue.component('dogs-form', {
-  props: [ 'roundness', 'title', 'message' ],
-  // In a Vue component, which might render
-  // lots of instances of the component, your
+  props: [ 'roundness', 'title', 'message' ]  ,
+  // In a Vue component, from which many
+  // instances might be rendered, your
   // component's data has to be a function
   // that returns an object containing the
   // variables you need for your component.
