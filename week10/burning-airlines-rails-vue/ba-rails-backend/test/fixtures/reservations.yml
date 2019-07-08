@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  row: 1
+  col: 1
+  flight_id: 1
+  user_id: 1
+  paid: 2019-07-08 11:54:54
+
+two:
+  row: 1
+  col: 1
+  flight_id: 1
+  user_id: 1
+  paid: 2019-07-08 11:54:54
