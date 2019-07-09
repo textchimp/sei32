@@ -32,7 +32,8 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
+import ajax from '@/lib/ajax';
 
 export default {
   name: 'FlightSearchResults',
@@ -49,12 +50,16 @@ export default {
   // i.e. same as React's componentDidMount()
   created(){
 
-    axios.get(`http://localhost:3000/flights/${this.origin}/${this.destination}`)
+    ajax.getFlightSearchResults(this.origin, this.destination)
     .then( res => {
       console.log('response', res);
       this.flights = res.data;  // Set the results into our component state; no need for this.setState()
       // BUT! Beware of changing elements inside arrays - this will not be noticed by Vue...
+    })
+    .catch( err => {
+      console.warn('search error', err);
     });
+
   },
 
   methods: {
