@@ -41,3 +41,9 @@ group :development, :test do
 end
 
 gem 'rack-cors'
+
+# Added at 2019-07-09 16:10:22 +1000 by textchimp:
+gem "graphql", "~> 1.9"
+# gem 'graphiql-rails', group: :development
+
+gem 'graphiql-rails', group: :development
