@@ -1,0 +1,9 @@
+<div id="heading">
+  <h1>Fruits Index</h1>
+</div>
+
+<ul>
+<% @fruits.each do |fruit| %>
+ <li class="item"><%= fruit.name %></li>
+<% end %>
+</ul>

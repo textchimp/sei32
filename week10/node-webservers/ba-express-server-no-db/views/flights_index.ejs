@@ -1,0 +1,12 @@
+<h1>All flights</h1>
+
+<ul>
+<% flights.forEach( flight => { %>
+  <li>
+    <p><strong>Flight <%= flight.flight_number %></strong></p>
+    <p><%= flight.origin %> to <%= flight.destination %></p>
+    <p>Date: <%= flight.departure_date_formatted %></p>
+    <p>Plane: <%= flight.plane.name %></p>
+  </li>
+<% }); %>
+</ul>
