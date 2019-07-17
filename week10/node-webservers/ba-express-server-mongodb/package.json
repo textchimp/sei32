@@ -1,19 +1,21 @@
 {
-  "name": "ba-express-server-no-db",
+  "name": "ba-express-server-mongodb",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "mongoimport --db ba --collection flights --drop --jsonArray --file seeds-flights.js",
     "server": "nodemon server.js"
+
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "ejs": "^2.6.2",
     "express": "^4.17.1",
+    "mongodb": "^3.2.7",
     "nodemon": "^1.19.1"
   }
 }

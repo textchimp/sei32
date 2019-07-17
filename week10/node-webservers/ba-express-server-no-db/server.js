@@ -29,6 +29,9 @@ const flights = [
 const express = require('express');
 const app = express();
 
+const cors = require('cors');
+app.use( cors() ); // Use cors package as 'middleware'
+
 app.set('view engine', 'ejs');
 
 const server = app.listen(3333, () => {
@@ -66,10 +69,45 @@ app.get('/flights.json', (req, res) => {
   res.json(flights);
 });
 
+// Flight search route
+app.get('/flights/:origin/:destination', (req, res) => {
+  console.log( 'params:', req.params );
+
+  const results = flights.filter( flight => {
+    return flight.origin === req.params.origin && flight.destination === req.params.destination;
+  });
+
+  res.json( results );
+});
+
+
+// Flight show page by ID
+app.get('/flights/:id', (req, res) => {
+
+  const id = parseInt( req.params.id );
+  const flight = flights.find( flight => flight.id === id );
+
+  res.json({
+    flight,
+    reservations: {
+      '1:1': 1,
+      '2:2': 1,
+      '3:3': 1
+    },
+    user_reservations: {
+      '4:4': 1,
+      '4:1': 1
+    }
+  });
+
+}); // get /flights/:id
+
+
+
 // Make the following routes work:
-// GET '/flight/:id'
+// GET '/flights/:id'
 //  - to get one flight by ID
-// GET '/search/:origin/:destination'
+// GET '/flights/:origin/:destination'
 //  - to search for flights
 // POST '/booking'
 //  - to make a reservation

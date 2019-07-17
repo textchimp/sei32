@@ -10,7 +10,7 @@ http.createServer( (request, response) => {
 
   switch( request.url ){
     case '/dogs':
-    response.write('<h1>Yeah dogs!</h1>');
+    response.write('<h1>Yeah nah dogs!</h1>');
     break;
     case '/cops':
     response.write('No cops!');

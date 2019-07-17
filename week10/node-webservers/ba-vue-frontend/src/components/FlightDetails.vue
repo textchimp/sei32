@@ -5,7 +5,7 @@
     <ReservationConfirm
      v-if="selectedSeat.row && selectedSeat.col"
      :selected-seat="selectedSeat"
-     :flight-id="flight.id"
+     :flight-id="flight.flight_number"
      :user-id="userId"
      @seat-confirmed="seatBooked"
     />
