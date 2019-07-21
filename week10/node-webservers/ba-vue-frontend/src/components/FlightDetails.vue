@@ -2,13 +2,15 @@
 <div>
   <h2>Flight Details</h2>
 
-    <ReservationConfirm
-     v-if="selectedSeat.row && selectedSeat.col"
-     :selected-seat="selectedSeat"
-     :flight-id="flight.flight_number"
-     :user-id="userId"
-     @seat-confirmed="seatBooked"
-    />
+    <div id="confirm-wrapper">
+      <ReservationConfirm
+       v-if="selectedSeat.row && selectedSeat.col"
+       :selected-seat="selectedSeat"
+       :flight-id="flight.flight_number"
+       :user-id="userId"
+       @seat-confirmed="seatBooked"
+      />
+    </div>
 
     <div class="confirmation" v-if="confirmationMessage">
       {{ confirmationMessage }}
@@ -47,6 +49,8 @@ import ReservationConfirm from './ReservationConfirm';
 // import axios from 'axios';
 import ajax from '@/lib/ajax';
 
+import io from 'socket.io-client';
+
 export default {
   name: 'FlightDetails',
   components: {
@@ -70,11 +74,15 @@ export default {
         row: 0,
         col: 0
       },
-      confirmationMessage: ''
+      confirmationMessage: '',
+
+      socket: io('http://localhost:3333/') // Establish a websocket connection
+
     };
   },
 
   created(){
+    console.log({io});
     // axios.get(`http://localhost:3000/flights/${this.id}`)
     ajax.getFlightDetails( this.id )
     .then( res => {
@@ -87,25 +95,51 @@ export default {
       this.reservations = res.data.reservations;
       this.userReservations = res.data.user_reservations;
     });
+
+    // Listen for certain websockets messages:
+    this.socket.on('ping', data => {
+      console.log('got a ping message!', data);
+    });
+
+    this.socket.on('news', (data, etc) => {
+      console.log('got a NEWS message!', data, etc);
+    });
+
+    // this.socket.on('new-reservation', this.seatBooked );
+    this.socket.on('new-reservation', reservation => {
+      console.info('got a RESERVATION socket msg!', reservation);
+      this.otherSeatBooked(reservation);
+    });
+
   },
 
   methods: {
 
+    otherSeatBooked(reservation){
+      // a websockets notification about someone else's reservation
+      console.log('booking seat event received!', reservation);
+      console.log('(someone else)');
+      const seatKey = `${reservation.row}:${reservation.col}`;
+
+      // GOTCHA: Vue can't detect the adding of a new property
+      // to an object in state, so you have to use .$set() to
+      // force Vue to notice this special case (like React's
+      // setState(), this also triggers a re-render)
+      this.$set(this.reservations, seatKey, 1);
+    },
+
     seatBooked(reservation){
-      console.log('booking seat event received!');
-      console.log(reservation);
+      console.log('booking confirmation (AJAX)', reservation);
       // clear the selected seat state, which will also
       // remove the ReservationConfirm component from the page
       this.selectedSeat = { row: 0, col: 0 };
+      this.confirmationMessage = 'Booking successful!';
 
       const seatKey = `${reservation.row}:${reservation.col}`;
-      this.userReservations[seatKey] = 1;
-
-      this.confirmationMessage = 'Booking successful!';
+      this.$set(this.userReservations, seatKey, 1);
     },
 
     selectSeat(row, col){
-      // console.log('selected:', row, col);
       this.selectedSeat = { row, col };
       this.confirmationMessage = ''; // clear the last confirmation
     },
@@ -137,7 +171,6 @@ export default {
       window.seatIterations++; // just for debugging
 
       const seatKey = `${row}:${col}`;
-
       if( seatKey in this.userReservations ){
         return 'mine';
       } else if( row == this.selectedSeat.row && col == this.selectedSeat.col ){
@@ -180,6 +213,12 @@ export default {
   color: orange;
   font-size: 14pt;
   padding: 20px;
+}
+
+#confirm-wrapper {
+  /* height: 180px;
+  width: 80vw;
+  display: inline-block; */
 }
 
 /* Seat diagram colour code classes */

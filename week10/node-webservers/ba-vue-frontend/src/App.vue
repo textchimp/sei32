@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-  <h1>BURRRNNNNING AIIIRRRRLIIINNNNES</h1>
+  <h1>BUUURRRNNNNIIIINGGGG AAAAIIIIIRRRRLIIIINNNNES</h1>
   <!-- <img src="https://media.giphy.com/media/MVgLEacpr9KVK172Ne/giphy-downsized.gif" alt=""> -->
     <router-view/>
   </div>
