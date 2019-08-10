@@ -1,0 +1,16 @@
+{
+  "name": "week9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bubble-sort.js",
+  "scripts": {
+    "test": "mocha --reporter=min -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}
